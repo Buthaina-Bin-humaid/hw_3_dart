@@ -1,7 +1,6 @@
 import 'package:hw_3_dart/hw_3_dart.dart' as hw_3_dart;
 
-void main() {
-  List<Map<String, dynamic>> peopleData = [
+List<Map<String, dynamic>> peopleData = [
     {'name': 'Ahmed', 'age': 25, 'salary': 5000.0, 'isStudent': false},
     {'name': 'Sara', 'age': 21, 'salary': 12.34, 'isStudent': true},
     {'name': 'Mohammed', 'age': 30, 'salary': 8500.5, 'isStudent': false},
@@ -13,6 +12,12 @@ void main() {
     {'name': 'Yousef', 'age': 40, 'salary': 15000.0, 'isStudent': false},
     {'name': 'Reem', 'age': 24, 'salary': 3200.0, 'isStudent': false},
   ];
+  
+void main() {
+ List<Person> people = parsePeople(peopleData);
+ for (var person in people) {
+ person.printDetails();
+ }
 }
 
 class Person {
@@ -32,7 +37,8 @@ class Person {
     print("Name: $name \nAge: $age \nSalary: $salary \nIs student: $isStudent");
   }
 
-  Person.fromJson(Map<String, dynamic> json){
+  Person.fromJson(Map<String, dynamic> json) {
     
   }
+
 }
